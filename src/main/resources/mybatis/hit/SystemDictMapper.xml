@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.project.hit.mapper.SystemDictMapper">
+
+    <resultMap id="BaseResultMap" type="com.ruoyi.project.hit.domain.SystemDict">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="dictType" column="dict_type" jdbcType="VARCHAR"/>
+            <result property="dictKey" column="dict_key" jdbcType="VARCHAR"/>
+            <result property="dictValue" column="dict_value" jdbcType="VARCHAR"/>
+            <result property="delState" column="del_state" jdbcType="SMALLINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,dict_type,dict_key,
+        dict_value,del_state,create_time,
+        update_time
+    </sql>
+    <select id="selectDictList" resultType="com.ruoyi.project.hit.domain.SystemDict"></select>
+</mapper>
