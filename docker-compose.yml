@@ -21,6 +21,11 @@ services:
       - --lower_case_table_names=1
     networks:
       - ruoyi-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot123456"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   redis:
     image: redis:7-alpine
@@ -29,10 +34,15 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - ./redis/data:/data
+      - redis-data:/data
     command: redis-server --requirepass 123456
     networks:
       - ruoyi-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   backend:
     image: eclipse-temurin:8-jre
@@ -52,8 +62,10 @@ services:
       - ./target/ruoyi.jar:/app/app.jar
     command: java -jar -Xms512m -Xmx1024m app.jar
     depends_on:
-      - mysql
-      - redis
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     networks:
       - ruoyi-network
 
@@ -77,3 +89,4 @@ networks:
 
 volumes:
   mysql-data:
+  redis-data:

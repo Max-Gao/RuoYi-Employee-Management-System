@@ -5,6 +5,7 @@
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
+# Java build output (keep jar for deployment)
 target/
 !.mvn/wrapper/maven-wrapper.jar
 
@@ -29,7 +30,6 @@ target/
 nbproject/private/
 build/*
 nbbuild/
-dist/
 nbdist/
 .nb-gradle/
 
@@ -37,7 +37,6 @@ nbdist/
 # Others
 *.log
 *.xml.versionsBackup
-*.jar
 *.war
 .DS_Store
 
@@ -45,9 +44,16 @@ nbdist/
 mysql/data/
 redis/data/
 
+# Local installed software (not needed for deployment)
+nginx-1.18.0/
+Redis-x64-5.0.14/
+
 # Env files (contain passwords)
 .env
 *.env.local
+
+# Keep compiled frontend (needed for deployment)
+!ruoyi-ui/dist/
 
 !*/build/*.java
 !*/build/*.html
