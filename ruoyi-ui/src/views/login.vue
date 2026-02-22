@@ -10,12 +10,15 @@
       <el-form-item prop="password">
         <el-input
           v-model="loginForm.password"
-          type="password"
+          :type="passwordType"
           auto-complete="off"
           placeholder="密码"
           @keyup.enter.native="handleLogin"
+          @mousedown.native="passwordType = 'text'"
+          @mouseup.native="passwordType = 'password'"
+          @mouseleave.native="passwordType = 'password'"
         >
-          <svg-icon slot="prefix" icon-class="password" class="el-input__icon input-icon" />
+          <svg-icon slot="suffix" :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" class="el-input__icon input-icon" style="cursor: pointer;" />
         </el-input>
       </el-form-item>
       <el-form-item prop="code">
@@ -64,6 +67,7 @@ export default {
     return {
       codeUrl: "",
       cookiePassword: "",
+      passwordType: "password",
       loginForm: {
         username: "admin",
         password: "123456",
