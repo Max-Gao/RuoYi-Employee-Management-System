@@ -41,6 +41,14 @@ nbdist/
 *.war
 .DS_Store
 
+# Docker data
+mysql/data/
+redis/data/
+
+# Env files (contain passwords)
+.env
+*.env.local
+
 !*/build/*.java
 !*/build/*.html
 !*/build/*.xml
