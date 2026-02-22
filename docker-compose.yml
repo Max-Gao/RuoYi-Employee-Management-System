@@ -51,6 +51,7 @@ services:
     working_dir: /app
     environment:
       SPRING_PROFILES_ACTIVE: druid
+      RUO_YI_PROFILE: /app/uploadPath
       SPRING_DATASOURCE_DRUID_MASTER_URL: jdbc:mysql://ruoyi-mysql:3306/ry-cloud?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_DRUID_MASTER_USERNAME: root
       SPRING_DATASOURCE_DRUID_MASTER_PASSWORD: root123456
