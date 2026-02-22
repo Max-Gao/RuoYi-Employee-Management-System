@@ -78,9 +78,9 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./ruoyi-ui/dist:/usr/share/nginx/html:ro
+      - ./ruoyi-ui/dist:/usr/share/nginx/html
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./uploadPath:/usr/share/nginx/html/profile:ro
+      - ./uploadPath:/usr/share/nginx/html/profile
     depends_on:
       - backend
     networks:
