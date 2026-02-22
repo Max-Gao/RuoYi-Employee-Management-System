@@ -60,6 +60,7 @@ services:
       - "8080:8080"
     volumes:
       - ./target/ruoyi.jar:/app/app.jar
+      - ./uploadPath:/app/uploadPath
     command: java -jar -Xms512m -Xmx1024m app.jar
     depends_on:
       mysql:
