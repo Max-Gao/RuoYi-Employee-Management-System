@@ -80,6 +80,7 @@ services:
     volumes:
       - ./ruoyi-ui/dist:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./uploadPath:/usr/share/nginx/html/profile:ro
     depends_on:
       - backend
     networks:
