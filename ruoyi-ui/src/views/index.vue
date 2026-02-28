@@ -34,11 +34,9 @@
             <h4>前端技术</h4>
             <ul>
               <li>Vue</li>
-              <li>Vuex</li>
               <li>Element-ui</li>
               <li>Axios</li>
               <li>Sass</li>
-              <li>Quill</li>
               <li>...</li>
             </ul>
           </el-col>
