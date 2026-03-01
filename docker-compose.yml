@@ -45,12 +45,12 @@ services:
       retries: 5
 
   backend:
-    image: eclipse-temurin:8-jre
+    image: eclipse-temurin:17-jre
     container_name: ruoyi-backend
     restart: always
     working_dir: /app
     environment:
-      SPRING_PROFILES_ACTIVE: druid
+      SPRING_PROFILES_ACTIVE: dev
       RUO_YI_PROFILE: /app/uploadPath
       SPRING_DATASOURCE_DRUID_MASTER_URL: jdbc:mysql://ruoyi-mysql:3306/ry-cloud?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_DRUID_MASTER_USERNAME: root

@@ -1,3 +1,15 @@
-# 开发环境配置
+# 开发环境配置（本地 IDEA 运行）
 ruoyi:
   profile: E:/project/ruoyi/uploadPath
+
+spring:
+  datasource:
+    druid:
+      master:
+        url: jdbc:mysql://localhost:3306/his?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 123456
+  redis:
+    host: localhost
+    port: 6379
+    password:

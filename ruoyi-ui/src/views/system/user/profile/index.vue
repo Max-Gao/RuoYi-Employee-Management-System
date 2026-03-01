@@ -8,7 +8,7 @@
           </div>
           <div>
             <div class="text-center">
-              <userAvatar :user="user" />
+              <userAvatar :user="user" @avatarUpdate="handleAvatarUpdate" />
             </div>
             <ul class="list-group list-group-striped">
               <li class="list-group-item">
@@ -85,6 +85,9 @@ export default {
         this.roleGroup = response.roleGroup;
         this.postGroup = response.postGroup;
       });
+    },
+    handleAvatarUpdate(avatar) {
+      this.user.avatar = avatar;
     }
   }
 };

@@ -5,9 +5,9 @@
   "author": "若依员工",
   "license": "MIT",
   "scripts": {
-    "dev": "node --openssl-legacy-provider ./node_modules/@vue/cli-service/bin/vue-cli-service.js serve",
-    "build:prod": "node --openssl-legacy-provider ./node_modules/@vue/cli-service/bin/vue-cli-service.js build",
-    "build:stage": "node --openssl-legacy-provider ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode staging",
+    "dev": "node ./node_modules/@vue/cli-service/bin/vue-cli-service.js serve",
+    "build": "node ./node_modules/@vue/cli-service/bin/vue-cli-service.js build",
+    "build:stage": "node ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode staging",
     "preview": "node build/index.js --preview",
     "lint": "eslint --ext .js,.vue src"
   },
@@ -78,7 +78,7 @@
     "vue-template-compiler": "2.6.12"
   },
   "engines": {
-    "node": ">=8.9",
+    "node": ">=16",
     "npm": ">= 3.0.0"
   },
   "browserslist": [

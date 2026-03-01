@@ -6,8 +6,6 @@
 
     <div class="right-menu">
       <template v-if="device!=='mobile'">
-        <search id="header-search" class="right-menu-item" />
-        
         <el-tooltip content="源码地址" effect="dark" placement="bottom">
           <ruo-yi-git id="ruoyi-git" class="right-menu-item hover-effect" />
         </el-tooltip>
@@ -26,6 +24,7 @@
 
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
+          <span class="user-name">{{ name }}</span>
           <img :src="avatar" class="user-avatar">
           <i class="el-icon-caret-bottom" />
         </div>
@@ -69,6 +68,7 @@ export default {
     ...mapGetters([
       'sidebar',
       'avatar',
+      'name',
       'device'
     ]),
     setting: {
@@ -159,12 +159,14 @@ export default {
       }
     }
 
-    .avatar-container {
+      .avatar-container {
       margin-right: 30px;
 
       .avatar-wrapper {
         margin-top: 5px;
         position: relative;
+        display: flex;
+        align-items: center;
 
         .user-avatar {
           cursor: pointer;
@@ -173,11 +175,15 @@ export default {
           border-radius: 10px;
         }
 
+        .user-name {
+          margin-right: 8px;
+          font-size: 18px;
+          color: #5a5e66;
+          font-weight: 500;
+        }
+
         .el-icon-caret-bottom {
           cursor: pointer;
-          position: absolute;
-          right: -20px;
-          top: 25px;
           font-size: 12px;
         }
       }

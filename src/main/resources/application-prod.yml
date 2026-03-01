@@ -1,3 +1,15 @@
-# 生产环境配置
+# 生产环境配置（宝塔部署）
 ruoyi:
-  profile: /home/ruoyiEmployeeManagement/RuoYi-Employee-Management-System/uploadPath
+  profile: /www/wwwroot/47.100.56.201/uploadPath
+
+spring:
+  datasource:
+    druid:
+      master:
+        url: jdbc:mysql://localhost:3306/his?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 123456
+  redis:
+    host: localhost
+    port: 6379
+    password: 
